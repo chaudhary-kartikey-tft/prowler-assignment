@@ -18,7 +18,7 @@ class ScanSerializer(serializers.ModelSerializer):
 
 class CheckSerializer(serializers.ModelSerializer):
     """Serializer for the Check model."""
-    scan = ScanSerializer()
+    scan = serializers.PrimaryKeyRelatedField(queryset=Scan.objects.all())
 
     class Meta:
         model = Check
@@ -27,7 +27,8 @@ class CheckSerializer(serializers.ModelSerializer):
 
 class FindingSerializer(serializers.ModelSerializer):
     """Serializer for the Finding model."""
-    parent_check = CheckSerializer()
+    parent_check = serializers.PrimaryKeyRelatedField(queryset=Check.objects.all())
+    parent_check_details = CheckSerializer(source="parent_check", read_only=True)
 
     class Meta:
         model = Finding

@@ -47,3 +47,38 @@ This will start:
 - **Nginx Server**
 - **Django Channels WebSocket server** (ws://localhost:8000/)
 
+---
+
+## Usage
+
+### Create a Superuser (optional)
+```sh
+docker-compose exec web python manage.py createsuperuser
+```
+Then, log in at: http://localhost:8000/admin/
+
+### Start a Prowler Scan
+Send a `POST` request to:
+```http
+POST http://localhost:8000/api/v1/scans/
+Content-Type: application/json
+```
+This starts a scan in Celery and assigns a unique `scan_id`.
+
+### Check Scan Status (Real-time)
+Connect via WebSocket to:
+```
+ws://localhost:8000/ws/scans/{scan_id}/status/
+```
+You'll receive real-time updates as the scan progresses.
+
+### Retrieve Scan Results
+```http
+GET http://localhost:8000/api/v1/scans/{scan_id}/findings/
+```
+
+### CRUD Endpoints
+All major entities (`scans`, `checks`, `findings`) have full CRUD endpoints:
+- Scans: `/api/v1/scans`
+- Checks: `/api/v1/scans/{scan_id}/checks/`
+- Findings: `/api/v1/scans/{scan_id}/findings/` (optional query param: `check_id` to filter by check)

@@ -65,7 +65,7 @@ Content-Type: application/json
 ```
 This starts a scan in Celery and assigns a unique `scan_id`.
 
-**You can initiate multiple scans at the same time and they would run asynchronously since Celery task assigns a unique `scan_id` to each scan.**
+**You can initiate multiple scans at the same time and they would run asynchronously since each Celery task operates on a unique `scan_id` and would not conflict with other tasks.**
 
 ### Check Scan Status (Real-time)
 Connect via WebSocket to:

@@ -1,0 +1,16 @@
+celery==5.4.0
+channels==4.2.0
+channels-redis==4.2.1
+daphne[http2]==4.1.2
+django==5.1.2
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.6.0
+django-filter==24.3
+drf-nested-routers==0.94.1
+flake8==7.1.1
+prowler==5.4.2
+psycopg2-binary==2.9.10
+python-dotenv==1.0.1
+redis==5.2.0
+requests==2.32.3

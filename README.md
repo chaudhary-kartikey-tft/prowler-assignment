@@ -28,7 +28,7 @@ cd prowler-assignment
 ```
 
 ### Create a `.env` file
-Use the `.env.example` file in the project root and configure enviroment variables.
+Use the `.env.example` file in the project root as an example to create a `.env` file and configure enviroment variables.
 You would need to update the following environment variables:
 - [SECRET_KEY](https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-SECRET_KEY) (use something like [Djecrety](https://djecrety.ir/) to generate a secret key)
 - AWS_ACCESS_KEY_ID

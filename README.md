@@ -15,7 +15,7 @@ This project provides a DRF application for running AWS security scans using [Pr
 Make sure you have the following installed:
 - [Docker](https://docs.docker.com/get-docker/)  
 - [Docker Compose](https://docs.docker.com/compose/install/)  
-- [AWS credentials ready to be used](https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html) (`aws_access_key_id` and `aws_secret_access_key`)
+- [AWS credentials](https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html) ready to be used (`aws_access_key_id` and `aws_secret_access_key`)
 
 ---
 
